@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7A920C42BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920C32BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift */; };
-		D7A920C62BDCF8EC00A5A6F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920C52BDCF8EC00A5A6F5 /* ContentView.swift */; };
+		D7A920C62BDCF8EC00A5A6F5 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920C52BDCF8EC00A5A6F5 /* LocationListView.swift */; };
 		D7A920C82BDCF8ED00A5A6F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A920C72BDCF8ED00A5A6F5 /* Assets.xcassets */; };
 		D7A920CB2BDCF8ED00A5A6F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A920CA2BDCF8ED00A5A6F5 /* Preview Assets.xcassets */; };
 		D7A920D52BDCF8ED00A5A6F5 /* SuperSecretProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920D42BDCF8ED00A5A6F5 /* SuperSecretProjectTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		D7A920C02BDCF8EC00A5A6F5 /* SuperSecretProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSecretProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A920C32BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecretProjectApp.swift; sourceTree = "<group>"; };
-		D7A920C52BDCF8EC00A5A6F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D7A920C52BDCF8EC00A5A6F5 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		D7A920C72BDCF8ED00A5A6F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A920CA2BDCF8ED00A5A6F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D7A920D02BDCF8ED00A5A6F5 /* SuperSecretProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperSecretProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D7A920C32BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift */,
-				D7A920C52BDCF8EC00A5A6F5 /* ContentView.swift */,
+				D7A920C52BDCF8EC00A5A6F5 /* LocationListView.swift */,
 				D7A920C72BDCF8ED00A5A6F5 /* Assets.xcassets */,
 				D7A920C92BDCF8ED00A5A6F5 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A920C62BDCF8EC00A5A6F5 /* ContentView.swift in Sources */,
+				D7A920C62BDCF8EC00A5A6F5 /* LocationListView.swift in Sources */,
 				D7A920C42BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
