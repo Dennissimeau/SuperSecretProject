@@ -9,28 +9,56 @@ import XCTest
 @testable import SuperSecretProject
 
 final class SuperSecretProjectTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testFetchItemsSuccess() async {
+        let items = [
+            Location(name: "Amsterdam", lat: 52.3547498, long: 4.8339215),
+            Location(name: "Mumbai", lat: 19.0823998, long: 72.8111468),
+            Location(name: "Copenhagen", lat: 55.6713442, long: 12.523785),
+            Location(lat: 40.4380638, long: -3.7495758)
+        ]
+        
+        let mockService: NetworkService = MockNetworkService(items: items)
+    
+        let viewModel = LocationListViewModel(networkService: mockService)
+        
+        XCTAssertEqual(viewModel.locations.count, 0)
+        XCTAssertEqual(viewModel.loadState, .start)
+        
+        await viewModel.fetchLocations()
+        
+        XCTAssertEqual(viewModel.locations.count, 4)
+        XCTAssertEqual(viewModel.loadState, .retrieved)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testFetchItemsFails() async {
+        let mockService: NetworkService = MockNetworkService(error: .decodingFailed)
+        let viewModel = LocationListViewModel(networkService: mockService)
+        
+        XCTAssertEqual(viewModel.locations.count, 0)
+        XCTAssertEqual(viewModel.loadState, .start)
+        
+        await viewModel.fetchLocations()
+        
+        XCTAssertEqual(viewModel.locations.count, 0)
+        XCTAssertEqual(viewModel.loadState, .error(errorMessage: NetworkError.decodingFailed))
+        XCTAssertNotEqual(viewModel.loadState, .error(errorMessage: NetworkError.invalidURL))
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testFetchItemsEnhancedLocation() async {
+    let items = [
+        Location(name: "Amsterdam", lat: 52.3547498, long: 4.8339215),
+        Location(name: "Mumbai", lat: 19.0823998, long: 72.8111468),
+        Location(name: "Copenhagen", lat: 55.6713442, long: 12.523785),
+        Location(lat: 40.4380638, long: -3.7495758), // Madrid
+        Location(lat: 37.3347302, long: -122.0089189) // Cupertino (Apple Park)
+    ]
+        let mockService: NetworkService = MockNetworkService(items: items)
+        let viewModel = LocationListViewModel(networkService: mockService)
+        
+        await viewModel.fetchLocations()
+        
+        XCTAssertEqual(viewModel.locations[0].name, "Amsterdam")
+        XCTAssertEqual(viewModel.locations[3].name, "✨ Madrid")
+        XCTAssertEqual(viewModel.locations[4].name, "✨ Cupertino")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
