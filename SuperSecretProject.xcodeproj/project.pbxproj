@@ -29,6 +29,7 @@
 		D7A921052BDEEF3C00A5A6F5 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920F22BDD54D600A5A6F5 /* HTTPStatusCode.swift */; };
 		D7A921062BDEEF4D00A5A6F5 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920F92BDEE3B400A5A6F5 /* LoadState.swift */; };
 		D7A921072BDEEF5D00A5A6F5 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920F42BDE89DB00A5A6F5 /* CLLocation+Extensions.swift */; };
+		D7A921092BE0363000A5A6F5 /* CustomLocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D7A920F92BDEE3B400A5A6F5 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
 		D7A920FB2BDEE40600A5A6F5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D7A920FF2BDEE63300A5A6F5 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				D7A920ED2BDD4EFB00A5A6F5 /* LocationListViewModel.swift */,
 				D7A920C52BDCF8EC00A5A6F5 /* LocationListView.swift */,
+				D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */,
 			);
 			path = LocationList;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				D7A920FA2BDEE3B400A5A6F5 /* LoadState.swift in Sources */,
 				D7A920C42BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift in Sources */,
 				D7A920F12BDD531500A5A6F5 /* NetworkService.swift in Sources */,
+				D7A921092BE0363000A5A6F5 /* CustomLocationPickerView.swift in Sources */,
 				D7A920FC2BDEE40600A5A6F5 /* NetworkError.swift in Sources */,
 				D7A920EE2BDD4EFB00A5A6F5 /* LocationListViewModel.swift in Sources */,
 				D7A920F82BDE9FB400A5A6F5 /* Location.swift in Sources */,

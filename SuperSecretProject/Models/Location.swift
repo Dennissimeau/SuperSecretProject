@@ -11,8 +11,10 @@ public struct LocationsContainer: Decodable {
     public let locations: [Location]
 }
 
-public struct Location: Decodable, Hashable {
+public struct Location: Decodable, Hashable {    
     var name: String?
     let lat: Double
     let long: Double
+    
+    let isUserAdded: Bool?
 }

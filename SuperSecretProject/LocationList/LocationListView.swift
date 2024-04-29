@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import CoreLocation
-import MapKit
 
 struct LocationListView: View {
     @State var viewModel = LocationListViewModel(
@@ -35,11 +33,11 @@ struct LocationListView: View {
                     fetchLocationButton
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    openSheetItem
+                    addCustomLocationButton
                 }
             }
             .sheet(isPresented: $showBottomSheet) {
-                CustomLocationPickerView()
+                CustomLocationPickerView(viewModel: viewModel)
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
             }
@@ -67,10 +65,10 @@ struct LocationListView: View {
         }, label: {
             Text("Fetch")
         })
-        .disabled(!viewModel.locations.isEmpty)
+        .disabled(viewModel.locations.contains(where: { $0.isUserAdded == nil }))
     }
     
-    private var openSheetItem: some View {
+    private var addCustomLocationButton: some View {
         Button(action: {
             showBottomSheet = true
         }) {
@@ -110,12 +108,6 @@ struct LocationItemView: View {
             .font(.caption)
             .foregroundStyle(.secondary)
         }
-    }
-}
-
-struct CustomLocationPickerView: View {
-    var body: some View {
-        Text("PickerView")
     }
 }
 

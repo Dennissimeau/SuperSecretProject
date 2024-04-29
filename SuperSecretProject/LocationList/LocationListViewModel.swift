@@ -23,8 +23,9 @@ public final class LocationListViewModel {
     public func fetchLocations() async {
         loadState = .loading
         do {
-            let locations = try await networkService.fetchLocation()
-            self.locations = await enhanceLocationsWithCityName(locations: locations)
+            let fetchedLocations = try await networkService.fetchLocation()
+            let locations = await enhanceLocationsWithCityName(locations: fetchedLocations)
+            self.locations.append(contentsOf: locations)
             loadState = .retrieved
         } catch {
             loadState = .error(errorMessage: error)
