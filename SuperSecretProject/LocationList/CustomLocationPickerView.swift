@@ -37,8 +37,11 @@ struct CustomLocationPickerView: View {
                     Task {
                         locationTitle = await getLocationName(coordinate: context.region.center)
                     }
+                    UIAccessibility.post(notification: .announcement, argument: locationTitle)
                     cameraLocation = context.region
                 }
+                .accessibilityLabel("Map showing locations")
+                .accessibilityValue("Currently showing \(locationTitle)")
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .shadow(radius: 10, x: 2, y: 2)
             HStack {
@@ -56,9 +59,11 @@ struct CustomLocationPickerView: View {
             Text(locationTitle)
                 .bold()
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .accessibilityLabel("Selected location \(locationTitle)")
             Text("Search the map for your favorite location")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+                .accessibilityLabel("Instructions: Search the map for your favorite location by moving around.")
         }
     }
     
@@ -74,7 +79,9 @@ struct CustomLocationPickerView: View {
             )
             dismiss()
         })
-            .buttonStyle(BorderedProminentButtonStyle())
+        .buttonStyle(BorderedProminentButtonStyle())
+        .accessibilityLabel("Add location")
+        .accessibilityHint("Adds the currently selected location to your list")
     }
 }
 

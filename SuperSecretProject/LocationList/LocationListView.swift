@@ -21,6 +21,9 @@ struct LocationListView: View {
                 .onTapGesture {
                     openWikipedia(lat: location.lat, long: location.long)
                 }
+                .accessibilityAction(named: "Open in Wikipedia") {
+                    openWikipedia(lat: location.lat, long: location.long)
+                }
             }
             .navigationTitle("Locations")
             .overlay {
@@ -100,6 +103,7 @@ struct LocationItemView: View {
             if let name = location.name {
                 Text(name)
                     .bold()
+                    .accessibilityLabel("Location name: \(name)")
             }
             HStack {
                 Text(String(location.lat))
@@ -107,7 +111,10 @@ struct LocationItemView: View {
             }
             .font(.caption)
             .foregroundStyle(.secondary)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Coordinates: Latitude \(location.lat), Longitude \(location.long)")
         }
+        .accessibilityAddTraits(.isButton)
     }
 }
 
