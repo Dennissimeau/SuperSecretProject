@@ -21,7 +21,8 @@ extension LoadState: Equatable {
             return true
         case let (.error(lhsError), .error(rhsError)):
             // Compare errors by some criteria, e.g., their localized descriptions if they are CustomStringConvertible
-            return (lhsError as CustomStringConvertible).description == (rhsError as CustomStringConvertible).description
+            return (lhsError as CustomStringConvertible).description == (rhsError as CustomStringConvertible)
+                .description
         default:
             return false
         }

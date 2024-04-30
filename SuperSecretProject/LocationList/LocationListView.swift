@@ -63,9 +63,16 @@ struct LocationListView: View {
     @ViewBuilder private var emptyViewOverlay: some View {
         switch viewModel.loadState {
         case .start:
-            ContentUnavailableView("No locations yet!", systemImage: "location", description: Text("Tap fetch to get a list of locations and/or add one yourself."))
+            ContentUnavailableView(
+                "No locations yet!",
+                systemImage: "location",
+                description: Text("Tap fetch to get a list of locations and/or add one yourself.")
+            )
         case .error(let errorMessage):
-            ContentUnavailableView("Something went wrong: \n \(errorMessage)", systemImage: "exclamationmark.triangle.fill")
+            ContentUnavailableView(
+                "Something went wrong: \n \(errorMessage)",
+                systemImage: "exclamationmark.triangle.fill"
+            )
         case .loading:
             ProgressView()
         case .retrieved:
@@ -82,6 +89,7 @@ struct LocationListView: View {
             Text("Fetch")
         })
         .disabled(viewModel.locations.contains(where: { $0.isUserAdded == nil }))
+        .accessibilityHint("Fetches locations")
     }
     
     private var addCustomLocationButton: some View {
@@ -96,6 +104,7 @@ struct LocationListView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 )
         }
+        .accessibilityHint("Opens modal to select a favorite location on the map")
     }
     
     private var locationsPicker: some View {
@@ -209,6 +218,7 @@ struct LocationItemView: View {
             .accessibilityElement(children: .combine)
             .accessibilityLabel("Coordinates: Latitude \(location.lat), Longitude \(location.long)")
         }
+        .accessibilityElement(children: .combine)
         .accessibilityAddTraits(.isButton)
     }
 }

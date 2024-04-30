@@ -26,7 +26,8 @@ struct CustomLocationPickerView: View {
     var viewModel: LocationListViewModel
     
     private func getLocationName(coordinate: CLLocationCoordinate2D) async -> String {
-        return await CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude).getNearbyCity() ?? "Unknown"
+        return await CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            .getNearbyCity() ?? "Unknown"
     }
     
     var body: some View {
@@ -44,11 +45,7 @@ struct CustomLocationPickerView: View {
                 .accessibilityValue("Currently showing \(locationTitle)")
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .shadow(radius: 10, x: 2, y: 2)
-            HStack {
-                Spacer()
                 addButton
-                Spacer()
-            }
             .padding(.top)
         }
         .padding()
@@ -68,7 +65,7 @@ struct CustomLocationPickerView: View {
     }
     
     var addButton: some View {
-        Button("Add location", action: {
+        Button(action: {
             viewModel.locations.append(
                 Location(
                     name: locationTitle,
@@ -78,7 +75,12 @@ struct CustomLocationPickerView: View {
                 )
             )
             dismiss()
-        })
+        }) {
+            Text("Add location")
+                .padding(.vertical, 8)
+                .frame(maxWidth: .infinity)
+                .bold()
+        }
         .buttonStyle(BorderedProminentButtonStyle())
         .accessibilityLabel("Add location")
         .accessibilityHint("Adds the currently selected location to your list")
