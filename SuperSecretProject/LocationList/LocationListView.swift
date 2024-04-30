@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreLocation
 import MapKit
+import TipKit
 
 struct LocationListView: View {
     @State var viewModel = LocationListViewModel(
@@ -147,6 +148,8 @@ struct ItemGridView: View {
 }
 
 struct ItemListView: View {
+    private let locationNameTip = LocationNameTip()
+    
     var locations: [Location]
     var openWikipedia: (Double, Double) -> Void
     
@@ -159,6 +162,13 @@ struct ItemListView: View {
                 .accessibilityAction(named: "Open in Wikipedia") {
                     openWikipedia(location.lat, location.long)
                 }
+                .popoverTip(locationNameTip, arrowEdge: .top)
+        }
+        .task {
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
         }
     }
 }
