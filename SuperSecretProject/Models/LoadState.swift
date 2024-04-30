@@ -9,7 +9,7 @@ import Foundation
 
 public enum LoadState {
     case start
-    case error(errorMessage: Error)
+    case error(errorMessage: String)
     case loading
     case retrieved
 }

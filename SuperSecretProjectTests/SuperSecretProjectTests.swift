@@ -40,8 +40,8 @@ final class SuperSecretProjectTests: XCTestCase {
         await viewModel.fetchLocations()
         
         XCTAssertEqual(viewModel.locations.count, 0)
-        XCTAssertEqual(viewModel.loadState, .error(errorMessage: NetworkError.decodingFailed))
-        XCTAssertNotEqual(viewModel.loadState, .error(errorMessage: NetworkError.invalidURL))
+        XCTAssertEqual(viewModel.loadState, .error(errorMessage: NetworkError.decodingFailed.rawValue))
+        XCTAssertNotEqual(viewModel.loadState, .error(errorMessage: NetworkError.invalidURL.rawValue))
     }
     
     func testFetchItemsEnhancedLocation() async {

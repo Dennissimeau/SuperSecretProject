@@ -28,7 +28,11 @@ public final class LocationListViewModel {
             self.locations.append(contentsOf: locations)
             loadState = .retrieved
         } catch {
-            loadState = .error(errorMessage: error)
+            if let networkError = error as? NetworkError {
+                loadState = .error(errorMessage: networkError.rawValue)
+            } else {
+                loadState = .error(errorMessage: error.localizedDescription)
+            }
         }
     }
     
