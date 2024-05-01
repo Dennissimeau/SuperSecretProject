@@ -31,6 +31,10 @@
 		D7A921072BDEEF5D00A5A6F5 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A920F42BDE89DB00A5A6F5 /* CLLocation+Extensions.swift */; };
 		D7A921092BE0363000A5A6F5 /* CustomLocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */; };
 		D7A9210B2BE17E6600A5A6F5 /* LocationNameTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9210A2BE17E6600A5A6F5 /* LocationNameTip.swift */; };
+		D7A9210E2BE2CDBE00A5A6F5 /* ItemGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9210D2BE2CDBE00A5A6F5 /* ItemGridView.swift */; };
+		D7A921102BE2CDE900A5A6F5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9210F2BE2CDE900A5A6F5 /* MapView.swift */; };
+		D7A921122BE2CE2200A5A6F5 /* LocationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A921112BE2CE2200A5A6F5 /* LocationItemView.swift */; };
+		D7A921142BE2CE4000A5A6F5 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A921132BE2CE4000A5A6F5 /* ItemListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,10 @@
 		D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationPickerView.swift; sourceTree = "<group>"; };
 		D7A9210A2BE17E6600A5A6F5 /* LocationNameTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNameTip.swift; sourceTree = "<group>"; };
 		D7A9210C2BE1A4FC00A5A6F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D7A9210D2BE2CDBE00A5A6F5 /* ItemGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGridView.swift; sourceTree = "<group>"; };
+		D7A9210F2BE2CDE900A5A6F5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D7A921112BE2CE2200A5A6F5 /* LocationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItemView.swift; sourceTree = "<group>"; };
+		D7A921132BE2CE4000A5A6F5 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +202,10 @@
 				D7A920C52BDCF8EC00A5A6F5 /* LocationListView.swift */,
 				D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */,
 				D7A9210A2BE17E6600A5A6F5 /* LocationNameTip.swift */,
+				D7A9210D2BE2CDBE00A5A6F5 /* ItemGridView.swift */,
+				D7A9210F2BE2CDE900A5A6F5 /* MapView.swift */,
+				D7A921112BE2CE2200A5A6F5 /* LocationItemView.swift */,
+				D7A921132BE2CE4000A5A6F5 /* ItemListView.swift */,
 			);
 			path = LocationList;
 			sourceTree = "<group>";
@@ -330,11 +342,15 @@
 			files = (
 				D7A9210B2BE17E6600A5A6F5 /* LocationNameTip.swift in Sources */,
 				D7A920F32BDD54D600A5A6F5 /* HTTPStatusCode.swift in Sources */,
+				D7A921122BE2CE2200A5A6F5 /* LocationItemView.swift in Sources */,
 				D7A920C62BDCF8EC00A5A6F5 /* LocationListView.swift in Sources */,
 				D7A920F52BDE89DB00A5A6F5 /* CLLocation+Extensions.swift in Sources */,
+				D7A921102BE2CDE900A5A6F5 /* MapView.swift in Sources */,
 				D7A920FA2BDEE3B400A5A6F5 /* LoadState.swift in Sources */,
+				D7A9210E2BE2CDBE00A5A6F5 /* ItemGridView.swift in Sources */,
 				D7A920C42BDCF8EC00A5A6F5 /* SuperSecretProjectApp.swift in Sources */,
 				D7A920F12BDD531500A5A6F5 /* NetworkService.swift in Sources */,
+				D7A921142BE2CE4000A5A6F5 /* ItemListView.swift in Sources */,
 				D7A921092BE0363000A5A6F5 /* CustomLocationPickerView.swift in Sources */,
 				D7A920FC2BDEE40600A5A6F5 /* NetworkError.swift in Sources */,
 				D7A920EE2BDD4EFB00A5A6F5 /* LocationListViewModel.swift in Sources */,

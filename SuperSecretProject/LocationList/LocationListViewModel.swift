@@ -5,21 +5,21 @@
 //  Created by Dennis Vermeulen on 27/04/2024.
 //
 
+import CoreLocation
 import Foundation
 import Observation
-import CoreLocation
 
 @Observable
 public final class LocationListViewModel {
     private var networkService: NetworkService
-    
+
     public var loadState: LoadState = .start
     public var locations: [Location] = []
-    
+
     init(networkService: NetworkService) {
         self.networkService = networkService
     }
-    
+
     public func fetchLocations() async {
         loadState = .loading
         do {
@@ -29,14 +29,13 @@ public final class LocationListViewModel {
             loadState = .retrieved
         } catch {
             if let networkError = error as? NetworkError {
-                loadState = .error(errorMessage: networkError.rawValue)
+                loadState = .error(errorMessage: networkError.errorDescription)
             } else {
                 loadState = .error(errorMessage: error.localizedDescription)
             }
         }
     }
-    
-    
+
     private func enhanceLocationsWithCityName(locations: [Location]) async -> [Location] {
         var updatedLocations = [Location]()
         for location in locations {

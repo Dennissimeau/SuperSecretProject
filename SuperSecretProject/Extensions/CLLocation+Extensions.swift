@@ -5,15 +5,15 @@
 //  Created by Dennis Vermeulen on 28/04/2024.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 extension CLLocation {
     func getNearbyCity() async -> String? {
         do {
             let reverse = try await CLGeocoder().reverseGeocodeLocation(self)
             guard let locality = reverse.first?.locality else { return nil }
-            return  "✨ \(locality)"
+            return "✨ \(locality)"
         } catch {
             return nil
         }
