@@ -54,3 +54,6 @@ In my personal view of writing SwiftUI these bits are too small to justify their
 ## Testability
 At last I want to touch on the unit tests. The app is of course quite simple, but I touch upon the functionality the viewmodel offers. The mock I made and injected is fairly simple but shows of the basic functionality works. That is also why I used protocols to base my networking functionality around.
 
+## Video
+
+<video src="https://github.com/Dennissimeau/SuperSecretProject/assets/16118795/43221deb-f011-4120-b518-cbf5aa15bb83"></video>
