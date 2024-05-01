@@ -71,6 +71,7 @@
 		D7A920FF2BDEE63300A5A6F5 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		D7A921082BE0363000A5A6F5 /* CustomLocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationPickerView.swift; sourceTree = "<group>"; };
 		D7A9210A2BE17E6600A5A6F5 /* LocationNameTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNameTip.swift; sourceTree = "<group>"; };
+		D7A9210C2BE1A4FC00A5A6F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +122,7 @@
 		D7A920C22BDCF8EC00A5A6F5 /* SuperSecretProject */ = {
 			isa = PBXGroup;
 			children = (
+				D7A9210C2BE1A4FC00A5A6F5 /* Info.plist */,
 				D7A920FE2BDEE4B300A5A6F5 /* LocationList */,
 				D7A920FD2BDEE4A300A5A6F5 /* Extensions */,
 				D7A920F62BDE9FA100A5A6F5 /* Models */,
@@ -511,6 +513,8 @@
 				DEVELOPMENT_TEAM = 68LPQWE879;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperSecretProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Super Secret";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -540,6 +544,8 @@
 				DEVELOPMENT_TEAM = 68LPQWE879;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperSecretProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Super Secret";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -15,6 +15,7 @@ struct LocationListView: View {
         networkService: NetworkManager()
     )
     
+    @State var showWikiAlert: Bool = false
     @State var showBottomSheet: Bool = false
     @State var selectedPickerIndex: Int = 0
     
@@ -57,6 +58,9 @@ struct LocationListView: View {
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
             }
+            .alert(
+                "Seems you don't have the Wikipedia app fork installed. Install it via Xcode and try again.",
+                isPresented: $showWikiAlert) { }
         }
     }
     
@@ -119,6 +123,10 @@ struct LocationListView: View {
         let urlString = "wikipedia://places?lat=\(String(lat))&lon=\(String(long))"
         guard let url = URL(string: urlString) else {
             print("invalid URL")
+            return
+        }
+        guard UIApplication.shared.canOpenURL(url) else {
+            showWikiAlert = true
             return
         }
         UIApplication.shared.open(url)
